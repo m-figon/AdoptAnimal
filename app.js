@@ -1,14 +1,26 @@
-const express = require("express");
-const app = express();
-const path = require("path");
-app.set("views", path.join(__dirname, "dist"));
-app.set('view engine', 'ejs');
-app.use("/", express.static(path.join(__dirname)));
-app.get("*", function (req, res) {
-    res.render("index", {
-        path: req.url
+(function($) {
+      
+    var app = $.sammy('#main', function() {
+  
+      this.get('#/', function(context) {
+        $(".app").append("<ul class='rslides'></ul>");
+        $(".app ul").append("<li><img src='imgs/dog1.jpg' alt=''></li>");
+        $(".app ul").append("<li><img src='imgs/dog2.jpg' alt=''></li>");
+        $(".app ul").append("<li><img src='imgs/dog3.jpg' alt=''></li>");
+      });
+      this.get('#/dogs', function(context) {
+        console.log('dogs');
+      });
+      this.get('#/cats', function(context) {
+        console.log('cats');
+      });
+      this.get('#/rabbits', function(context) {
+        console.log('rabbits');
+      });
     });
-});
-var server = app.listen((process.env.PORT || 8800), function () {
-    console.log("Node server started at PORT:" + server.address().port);
-});
+  
+    $(function() {
+      app.run('#/');
+    });
+  
+  })(jQuery);

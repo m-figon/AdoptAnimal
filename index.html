@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="imgs/paw.png">
   <title>Adopt Animal</title>
 </head>
 
@@ -11,20 +12,27 @@
 
   <div class="nav-bar">
     <div class="left">
-      <h1 data-route="/" class="active">AdoptAnimal</h1>
+      <img src="imgs/paw.png">
+      <a href="#/"><h1>AdoptAnimal</h1></a>
     </div>
     <div class="middle">
-      <h1 data-route="/dogs">Dogs</h1>
-      <h1 data-route="/cats">Cats</h1>
-      <h1 data-route="/rabbits">Rabbits</h1>
+      <a href="#/dogs"><h1>Dogs</h1></a>
+      <a href="#/cats"><h1>Cats</h1></a>
+      <a href="#/rabbits"><h1>Rabbits</h1></a>
     </div>
   </div>
   <div class="app">
-
+    
   </div>
   <script src="jquery-3.5.1.js"></script>
+  <script src="sammy.js" type="text/javascript" charset="utf-8"></script>
+  <script src="responsiveslides.min.js"></script>
   <script src="app.js"></script>
-  <script type="module" src="app2.js"></script>
+  <script>
+    $(function() {
+      $(".rslides").responsiveSlides();
+    });
+  </script>
 </body>
 
 </html>

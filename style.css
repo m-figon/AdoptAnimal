@@ -19,6 +19,11 @@ body {
 .left h1{
     font-size: 2rem;
 }
+.left img{
+    height:2rem;
+    width: 2rem;
+    margin-right: 1rem;
+}
 .middle{
     width:50%;
     display: flex;
@@ -36,8 +41,51 @@ body {
     align-items: center;
     height: 100vh-5rem;
     width: 99vw;
-    padding-top: 5rem;
+    padding-top: 0rem;
 }
 .app h1{
     font-size: 1.5rem;
 }
+a{
+    color: #3c6382;
+    text-decoration: none;
+}
+.home-img{
+    width:100%;
+    height:100%;
+}
+.home-img img{
+    width:100%;
+    height:100%;
+}
+.rslides {
+    position: relative;
+    list-style: none;
+    overflow: hidden;
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+    }
+  
+  .rslides li {
+    -webkit-backface-visibility: hidden;
+    position: absolute;
+    display: none;
+    width: 100vw;
+    left: 0;
+    top: 0;
+    }
+  
+  .rslides li:first-child {
+    position: relative;
+    display: block;
+    float: left;
+    }
+  
+  .rslides img {
+    display: block;
+    float: left;
+    width: 100vw;
+    height: 94vh;
+    border: 0;
+    }
