@@ -1,0 +1,43 @@
+body {
+    font-family: "PT Sans", sans-serif;
+    color: black;
+    margin: 0;
+}
+.nav-bar{
+    background-color: #f8c291;
+    width:100%;
+    height:3rem;
+    display: flex;
+    color:#3c6382;
+}
+.left{
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.left h1{
+    font-size: 2rem;
+}
+.middle{
+    width:50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.middle h1{
+    margin: 0 1rem;
+    font-size: 1.5rem;
+}
+.app {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh-5rem;
+    width: 99vw;
+    padding-top: 5rem;
+}
+.app h1{
+    font-size: 1.5rem;
+}
