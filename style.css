@@ -1,36 +1,36 @@
 body {
     font-family: "PT Sans", sans-serif;
-    color: black;
+    color: #3c6382;
     margin: 0;
 }
-.nav-bar{
+.nav-bar {
     background-color: #f8c291;
-    width:100%;
-    height:3rem;
+    width: 100%;
+    height: 3rem;
     display: flex;
-    color:#3c6382;
+    color: #3c6382;
 }
-.left{
+.left {
     width: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.left h1{
+.left h1 {
     font-size: 2rem;
 }
-.left img{
-    height:2rem;
+.left img {
+    height: 2rem;
     width: 2rem;
     margin-right: 1rem;
 }
-.middle{
-    width:50%;
+.middle {
+    width: 50%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
 }
-.middle h1{
+.middle h1 {
     margin: 0 1rem;
     font-size: 1.5rem;
 }
@@ -43,20 +43,20 @@ body {
     width: 99vw;
     padding-top: 0rem;
 }
-.app h1{
+.app h1 {
     font-size: 1.5rem;
 }
-a{
+a {
     color: #3c6382;
     text-decoration: none;
 }
-.home-img{
-    width:100%;
-    height:100%;
+.home-img {
+    width: 100%;
+    height: 100%;
 }
-.home-img img{
-    width:100%;
-    height:100%;
+.home-img img {
+    width: 100%;
+    height: 100%;
 }
 .rslides {
     position: relative;
@@ -65,27 +65,56 @@ a{
     width: 100vw;
     padding: 0;
     margin: 0;
-    }
-  
-  .rslides li {
+}
+
+.rslides li {
     -webkit-backface-visibility: hidden;
     position: absolute;
     display: none;
     width: 100vw;
     left: 0;
     top: 0;
-    }
-  
-  .rslides li:first-child {
+}
+
+.rslides li:first-child {
     position: relative;
     display: block;
     float: left;
-    }
-  
-  .rslides img {
+}
+
+.rslides img {
     display: block;
     float: left;
     width: 100vw;
     height: 94vh;
     border: 0;
-    }
+}
+.animals {
+    margin-top: 2rem;
+    width:70rem;
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+.animal {
+    margin: 1rem 1rem;
+    width:23rem;
+    height: 22rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f8c291;
+    border-radius: 10px;
+    border: 2px solid #3c6382;
+}
+.animal h1{
+    font-size: 1.5rem;
+}
+.animal h2{
+    font-size: 2rem;
+}
+.animal img{
+    border-radius: 10px;
+    width:15rem;
+    height:12rem;
+}
