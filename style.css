@@ -39,6 +39,12 @@ body {
     justify-content: flex-end;
     align-items: center;
 }
+.right {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .middle h1 {
     margin: 0 1rem;
     font-size: 1.5rem;
@@ -206,8 +212,8 @@ a {
 }
 .adoption-form{
     margin-top: 3rem;
-    width: 25rem;
-    height: 42rem;
+    width: 30rem;
+    height: 50rem;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -217,8 +223,8 @@ a {
     border: 2px solid #3e4444;
 }
 .adoption-content{
-    width: 65%;
-    height: 90%;
+    width: 75%;
+    height: 95%;
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
@@ -260,4 +266,35 @@ a {
     font-family: 'Lato', sans-serif;
     border: 1.5px solid #3e4444;
     border-radius: 10px;
+}
+.contact {
+    margin-top: 3rem;
+    width: 27rem;
+    height: 20rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-image: linear-gradient(315deg, #405d27 -10%, #3e4444 94%);
+    border-radius: 10px;
+    border: 2px solid #3e4444;
+}
+.contact-details {
+    width: 70%;
+    height: 75%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.contact-details h1 {
+    font-size: 1.0rem;
+}
+#hidden{
+    display: none;
+}
+.adoption-content p{
+    margin: 0 0;
+    font-size: 1rem;
+    color: rgb(196, 50, 50);
 }
