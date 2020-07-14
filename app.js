@@ -104,7 +104,7 @@
     this.get('#/:type/:id/adoption', function (context) {
       urlNavigation(context);
       let inputValues = ["First Name", "Last Name", "City", "Street", "Phone Number", "Email"];
-      let errors = ["First name must containt from 3 to 12 a-z letters", "Last Name must containt from 3 to 12 a-z letters", "City name must be 3 or more letters long", "Street name must be 3 or more letters long", "Phone Number must contain 9 digits without space", "Please enter correct email"];
+      let errors = ["First name must containt from 3 to 12 a-z letters", "Last Name must containt from 3 to 12 a-z letters", "City name must be 3 or more letters long", "Street name must be 3 or more letters long", "Phone Number must contain 9 digits without space", "Please enter correct email address"];
       fetch('https://rocky-citadel-32862.herokuapp.com/AdoptAnimal/animals')
         .then(response => response.json())
         .then(data => {

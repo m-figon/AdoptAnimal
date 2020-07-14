@@ -34,13 +34,13 @@ body {
     filter: invert(100%);
 }
 .middle {
-    width: 50%;
+    width: 40%;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
 }
 .right {
-    width: 30%;
+    width: 10%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -54,9 +54,8 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    height: 95vh;
+    height: calc(100vh - 3rem);
     width: 99vw;
-    padding-top: 0rem;
     background: url("imgs/background.jpg");
     background-size: 100% 100%;
 }
@@ -80,6 +79,7 @@ a {
     list-style: none;
     overflow: hidden;
     width: 100vw;
+    height: 100%;
     padding: 0;
     margin: 0;
 }
@@ -89,6 +89,7 @@ a {
     position: absolute;
     display: none;
     width: 100vw;
+    height: 100%;
     left: 0;
     top: 0;
 }
@@ -103,12 +104,12 @@ a {
     display: block;
     float: left;
     width: 100vw;
-    height: 94vh;
+    height: calc(100vh - 3rem);
     border: 0;
 }
 .animals {
     margin-top: 2rem;
-    width: 70rem;
+    width: auto;
     display: grid;
     grid-template-columns: auto auto auto;
 }
@@ -324,11 +325,11 @@ a {
 .info-details h2 {
     font-size: 2rem;
 }
-.loading{
-    width:100vw;
-    height:100vh;
-    top:0;
-    left:0;
+.loading {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
     position: absolute;
     display: flex;
     align-items: center;
@@ -336,7 +337,196 @@ a {
     z-index: 6;
     background-image: linear-gradient(315deg, #405d27 -10%, #3e443f 94%);
 }
-.loading img{
-    height:3rem;
-    width:3rem;
+.loading img {
+    height: 3rem;
+    width: 3rem;
+}
+@media only screen and (max-width: 1300px) {
+    .left {
+        width: 30%;
+    }
+}
+@media only screen and (max-width: 900px) {
+    .left,
+    .middle,
+    .right {
+        width: 33%;
+    }
+    .left h1 {
+        font-size: 1.5rem;
+    }
+    .left img {
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-right: 0.5rem;
+    }
+    .middle h1,
+    .right h1 {
+        font-size: 1.2rem;
+    }
+    .middle h1 {
+        margin: 0 0.5rem;
+    }
+}
+@media only screen and (max-width: 650px) {
+    .left {
+        width: 40%;
+    }
+    .middle {
+        width: 40%;
+    }
+    .right {
+        width: 20%;
+    }
+    .left h1 {
+        font-size: 1.2rem;
+    }
+    .left img {
+        width: 1.2rem;
+        height: 1.2rem;
+        margin-right: 0.2rem;
+    }
+    .middle h1,
+    .right h1 {
+        font-size: 1rem;
+    }
+}
+@media only screen and (max-width: 450px) {
+    .left h1 {
+        font-size: 1rem;
+    }
+    .left img {
+        width: 1rem;
+        height: 1rem;
+        margin-right: 0.2rem;
+    }
+    .middle h1,
+    .right h1 {
+        font-size: 0.8rem;
+    }
+}
+@media only screen and (max-width: 1400px) {
+    .animal {
+        width: 15rem;
+        height: 16rem;
+    }
+    .animal h2 {
+        font-size: 1.5rem;
+    }
+    .animal img {
+        width: 10rem;
+        height: 8.5rem;
+    }
+}
+@media only screen and (max-width: 950px) {
+    .animal {
+        width: 10rem;
+        height: 12rem;
+        margin: 1rem 0.5rem;
+    }
+    .animal h2 {
+        font-size: 1.2rem;
+    }
+    .animal img {
+        width: 6rem;
+        height: 5rem;
+    }
+}
+@media only screen and (max-width: 700px) {
+    .animals {
+        grid-template-columns: auto auto;
+    }
+}
+@media only screen and (max-width: 450px) {
+    .animals {
+        grid-template-columns: auto auto;
+    }
+    .animal {
+        width: 8rem;
+    }
+}
+@media only screen and (max-width: 900px) {
+    .animal-details {
+        width: 20rem;
+    }
+}
+@media only screen and (max-width: 650px) {
+    .animal-details {
+        height: 28rem;
+        width:17rem;
+    }
+    .content h2 {
+        font-size: 1.2rem;
+    }
+    .content img {
+        width: 12rem;
+        height: 10rem;
+    }
+    .content h1 {
+        font-size: 0.8rem;
+    }
+}
+@media only screen and (max-width: 850px) {
+    .adoption-form{
+        width:20rem;
+    }
+    .adoption-content{
+        width:80%;
+    }
+    .adoption-content h2{
+        font-size: 1.3rem;
+    }
+    .adoption-content p{
+        font-size: 0.8rem;
+    }
+    .adoption-content input{
+        height:1.4rem;
+        font-size: 1rem;
+    }
+}
+@media only screen and (max-width: 450px) {
+    .adoption-form{
+        width:16rem;
+    }
+    .adoption-content{
+        width:80%;
+    }
+    .adoption-content h2{
+        font-size: 1.3rem;
+    }
+    .adoption-content p{
+        font-size: 0.8rem;
+    }
+    .adoption-content input{
+        width:12rem;
+        height:1.2rem;
+        font-size: 0.8rem;
+    }
+}
+@media only screen and (max-width: 650px) {
+    .contact{
+        width: 15rem;
+        height: 18rem;
+    }
+    .contact h1{
+        font-size: 0.8rem;
+    }
+}
+@media only screen and (max-width: 1100px) {
+    .app .quote h1 {
+        width: 20rem;
+        font-size: 1.5rem;
+        margin: 0 0;
+    }
+    .rslides{
+        display: none;
+    }
+}
+@media only screen and (max-width: 550px) {
+    .app .quote h1 {
+        width: 15rem;
+        font-size: 1.2rem;
+        margin: 0 0;
+        padding: 1rem 1rem;
+    }
 }
