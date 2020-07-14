@@ -1,5 +1,5 @@
 body {
-    font-family: 'Lato', sans-serif;
+    font-family: "Lato", sans-serif;
     color: white;
     margin: 0;
 }
@@ -13,7 +13,7 @@ body {
     border-bottom: 1.5px solid black;
     z-index: 5;
 }
-.nav-bar h1:hover{
+.nav-bar h1:hover {
     text-shadow: 2px 2px 2px rgba(150, 150, 150, 1);
     cursor: pointer;
 }
@@ -57,7 +57,7 @@ body {
     height: 95vh;
     width: 99vw;
     padding-top: 0rem;
-    background: url('imgs/background.jpg');
+    background: url("imgs/background.jpg");
     background-size: 100% 100%;
 }
 .app h1 {
@@ -127,26 +127,26 @@ a {
 .animal h1 {
     font-size: 1.5rem;
 }
-.app .quote{
+.app .quote {
     position: absolute;
-    top:0;
-    left:0;
-    width:100vw;
-    height:100vh;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 3;
 }
-.app .quote h1{
+.app .quote h1 {
     border-radius: 20px;
     background-color: rgba(0, 0, 0, 0.438);
     margin-top: -50vh;
     margin-left: 40%;
     padding: 1rem 2rem;
     font-family: "Dancing Script", cursive;
-    width:30rem;
-    color:white;
+    width: 30rem;
+    color: white;
     font-size: 2rem;
 }
 .animal h2 {
@@ -202,15 +202,15 @@ a {
     padding: 0.2rem 0.5rem;
     font-size: 1.2rem;
     border-radius: 5px;
-    background-color:#82b74b;
+    background-color: #82b74b;
     border: 2px solid black;
     color: white;
 }
 .content button:hover {
-    background-color:#405d27;
+    background-color: #405d27;
     cursor: pointer;
 }
-.adoption-form{
+.adoption-form {
     margin-top: 3rem;
     width: 30rem;
     height: 50rem;
@@ -222,7 +222,7 @@ a {
     border-radius: 10px;
     border: 2px solid #3e4444;
 }
-.adoption-content{
+.adoption-content {
     width: 75%;
     height: 95%;
     display: flex;
@@ -249,21 +249,21 @@ a {
     padding: 0.2rem 0.5rem;
     font-size: 1.2rem;
     border-radius: 5px;
-    background-color:#82b74b;
+    background-color: #82b74b;
     border: 2px solid black;
     color: white;
 }
 .adoption-content button:hover {
-    background-color:#405d27;
+    background-color: #405d27;
     cursor: pointer;
 }
-.adoption-content input{
+.adoption-content input {
     margin: 1rem 0;
     padding-left: 0.5rem;
-    width:15rem;
-    height:1.7rem;
+    width: 15rem;
+    height: 1.7rem;
     font-size: 1.2rem;
-    font-family: 'Lato', sans-serif;
+    font-family: "Lato", sans-serif;
     border: 1.5px solid #3e4444;
     border-radius: 10px;
 }
@@ -288,13 +288,55 @@ a {
     align-items: flex-start;
 }
 .contact-details h1 {
-    font-size: 1.0rem;
+    font-size: 1rem;
 }
-#hidden{
+#hidden {
     display: none;
 }
-.adoption-content p{
+.adoption-content p {
     margin: 0 0;
     font-size: 1rem;
     color: rgb(196, 50, 50);
+}
+.info {
+    margin-top: 3rem;
+    width: 27rem;
+    height: 16rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-image: linear-gradient(315deg, #405d27 -10%, #3e4444 94%);
+    border-radius: 10px;
+    border: 2px solid #3e4444;
+}
+.info-details {
+    width: 80%;
+    height: 75%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.info-details h1 {
+    font-size: 1.2rem;
+}
+.info-details h2 {
+    font-size: 2rem;
+}
+.loading{
+    width:100vw;
+    height:100vh;
+    top:0;
+    left:0;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 6;
+    background-image: linear-gradient(315deg, #405d27 -10%, #3e443f 94%);
+}
+.loading img{
+    height:3rem;
+    width:3rem;
 }
