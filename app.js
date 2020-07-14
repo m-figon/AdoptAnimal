@@ -1,3 +1,4 @@
+
 (function ($) {
 
   var app = $.sammy('#main', function () {
@@ -6,18 +7,13 @@
         context.app.setLocation('#/');
         location.reload();
       })
-      $('.middle h1:eq(0)').on('click', () => {
-        context.app.setLocation('#/dogs');
-        location.reload();
-      })
-      $('.middle h1:eq(1)').on('click', () => {
-        context.app.setLocation('#/cats');
-        location.reload();
-      })
-      $('.middle h1:eq(2)').on('click', () => {
-        context.app.setLocation('#/rabbits');
-        location.reload();
-      })
+      let urls = ['dogs', 'cats', 'rabbits'];
+      for (let i = 0; i < urls.length; i++) {
+        $(".middle h1:eq(" + i + ")").on('click', () => {
+          context.app.setLocation("#/" + urls[i]);
+          location.reload();
+        })
+      }
       $('.right h1').on('click', () => {
         context.app.setLocation('#/contact');
         location.reload();
@@ -27,22 +23,21 @@
       $(".loading").remove();
       urlNavigation(context);
       $(".app").append("<ul class='rslides'></ul>");
-      $(".app ul").append("<li><img src='imgs/dog1.jpg' alt=''></li>");
-      $(".app ul").append("<li><img src='imgs/dog2.jpg' alt=''></li>");
-      $(".app ul").append("<li><img src='imgs/dog3.jpg' alt=''></li>");
+      let imgs = ['dog1.jpg', 'dog2.jpg', 'dog3.jpg'];
+      for (let item of imgs) {
+        $(".app ul").append("<li><img src='imgs/" + item + "' alt=''></li>");
+      }
       $(".app").append("<div class='quote'><h1>Saving one dog will not change the world, but surely for that one dog, the world will change forever.</h1></div>");
     });
     this.get('#/contact', function (context) {
+      let contactInfo = ['80-288 Gdańsk RandomName 5 Street', 'Phone: 123 456 789', 'Email: randomemail@gmail.com', 'Adoption from Monday to Friday', 'Working hours: 8:00-16:00']
       $(".loading").remove();
       urlNavigation(context);
       $(".app").append("<div class='contact'></div>");
       $(".app .contact").append("<div class='contact-details'></div>");
-      $(".contact-details").append("<h1>80-288 Gdańsk RandomName 5 Street</h1>");
-      $(".contact-details").append("<h1>Phone: 123 456 789</h1>");
-      $(".contact-details").append("<h1>Email: randomemail@gmail.com</h1>");
-      $(".contact-details").append("<h1>Adoption from Monday to Friday</h1>");
-      $(".contact-details").append("<h1>Working hours: 8:00-16:00</h1>");
-
+      for (let item of contactInfo) {
+        $(".contact-details").append("<h1>" + item + "</h1>");
+      }
     });
     this.get('#/:type', function (context) {
       urlNavigation(context);
@@ -85,13 +80,11 @@
           console.log(context.params.id);
           for (let item of animals) {
             if (parseInt(item.id) === parseInt(context.params.id) && item.type === context.params.type) {
+              let content = ["<h2>" + item.name + "</h2", "<img src=" + item.img + ">", , "<h1> Age: " + item.age + "</h1", "<h1> Gender: " + item.gender + "</h1", "<h1> Charcter: " + item.description + "</h1", "<button>ADOPT</button>"]
               $(".animal-details").append("<div class='content'></div");
-              $(".content").append("<h2>" + item.name + "</h2");
-              $(".content").append("<img src=" + item.img + ">");
-              $(".content").append("<h1> Age: " + item.age + "</h1");
-              $(".content").append("<h1> Gender: " + item.gender + "</h1");
-              $(".content").append("<h1> Charcter: " + item.description + "</h1");
-              $(".content").append("<button>ADOPT</button>");
+              for (let item of content) {
+                $(".content").append(item);
+              }
               $('.content button').on('click', () => {
                 context.app.setLocation("#/" + item.type + "/" + item.id + "/adoption");
                 location.reload();
@@ -135,42 +128,33 @@
           $(".adoption-content").append("<button>ADOPT</button>");
           $(".adoption-content button").on('click', () => {
             let correctFlag = true;
-            if ($(".adoption-content input:eq(5)")[0].value.match(/^[a-z0-9\._\-]+@[a-z0-9\.\-]+\.[a-z]{2,4}$/) === null) {
-              $(".adoption-content p:eq(5)").attr('id', '');
-              correctFlag = false;
-            } else {
-              $(".adoption-content p:eq(5)").attr('id', 'hidden');
+            let matchingValues = [/^[a-zA-Z0-9\.\-_]{3,12}$/, /^[a-zA-Z0-9\.\-_]{3,12}$/, /^[Z0-9]{9}$/, /^[a-z0-9\._\-]+@[a-z0-9\.\-]+\.[a-z]{2,4}$/];
+            let values = ["City", "Street"];
+            for (let i = 0; i < 2; i++) {
+              if ($(".adoption-content input:eq(" + i + ")")[0].value.match(matchingValues[i]) === null) {
+                $(".adoption-content p:eq(" + i + ")").attr('id', '');
+                correctFlag = false;
+              } else {
+                $(".adoption-content p:eq(" + i + ")").attr('id', 'hidden');
+              }
             }
-            if ($(".adoption-content input:eq(4)")[0].value.match(/^[0-9]{9}$/) === null) {
-              $(".adoption-content p:eq(4)").attr('id', '');
-              correctFlag = false;
-            } else {
-              $(".adoption-content p:eq(4)").attr('id', 'hidden');
+            for (let i = 2; i < 4; i++) {
+              if (($(".adoption-content input:eq(" + i + ")")[0].value.length < 3) || $(".adoption-content input:eq(" + i + ")")[0].value === values[i - 2]) {
+                $(".adoption-content p:eq(" + i + ")").attr('id', '');
+                correctFlag = false;
+              } else {
+                $(".adoption-content p:eq(" + i + ")").attr('id', 'hidden');
+              }
             }
-            if ($(".adoption-content input:eq(0)")[0].value.match(/^[a-zA-Z0-9\.\-_]{3,12}$/) === null) {
-              $(".adoption-content p:eq(0)").attr('id', '');
-              correctFlag = false;
-            } else {
-              $(".adoption-content p:eq(0)").attr('id', 'hidden');
+            for (let i = 2; i < 4; i++) {
+              if ($(".adoption-content input:eq(" + (i + 2) + ")")[0].value.match(matchingValues[i]) === null) {
+                $(".adoption-content p:eq(" + (i + 2) + ")").attr('id', '');
+                correctFlag = false;
+              } else {
+                $(".adoption-content p:eq(" + (i + 2) + ")").attr('id', 'hidden');
+              }
             }
-            if ($(".adoption-content input:eq(1)")[0].value.match(/^[a-zA-Z0-9\.\-_]{3,12}$/) === null) {
-              $(".adoption-content p:eq(1)").attr('id', '');
-              correctFlag = false;
-            } else {
-              $(".adoption-content p:eq(1)").attr('id', 'hidden');
-            }
-            if (($(".adoption-content input:eq(2)")[0].value.length < 3) || $(".adoption-content input:eq(2)")[0].value === "City") {
-              $(".adoption-content p:eq(2)").attr('id', '');
-              correctFlag = false;
-            } else {
-              $(".adoption-content p:eq(2)").attr('id', 'hidden');
-            }
-            if (($(".adoption-content input:eq(3)")[0].value.length < 3) || $(".adoption-content input:eq(3)")[0].value === "Street") {
-              $(".adoption-content p:eq(3)").attr('id', '');
-              correctFlag = false;
-            } else {
-              $(".adoption-content p:eq(3)").attr('id', 'hidden');
-            }
+
             if (correctFlag) {
               fetch('https://rocky-citadel-32862.herokuapp.com/AdoptAnimal/adoptions', {
                 method: 'POST',
@@ -189,16 +173,15 @@
                 }
               }).then(data => {
                 console.log(data);
+                let info = ['<h2>Adoption request sent!</h2>', '<h1>We will respond to you soon</h1>', '<h1>You did something great today</h1>']
                 alert('adoption request sent');
-                  $(".adoption-form").remove();
-                  $(".app").append("<div class='info'></div>");
-                  $(".info").append("<div class='info-details'></div>");
-                  $(".info-details").append("<h2>Adoption request sent!</h2>");
-                  $(".info-details").append("<h1>We will respond to you soon</h1>");
-                  $(".info-details").append("<h1>You did something great today</h1>");
-
-                });
-
+                $(".adoption-form").remove();
+                $(".app").append("<div class='info'></div>");
+                $(".info").append("<div class='info-details'></div>");
+                for (let item of info) {
+                  $(".info-details").append(item);
+                }
+              });
             }
           })
         })
