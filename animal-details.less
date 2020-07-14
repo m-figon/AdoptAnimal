@@ -1,0 +1,53 @@
+
+@import "global.less";
+
+.animal-details {
+    margin-top: 3rem;
+    width: 33rem;
+    height: 38rem;
+    .flex();
+    flex-direction: column;
+    .gradient();
+    border-radius: 10px;
+    border: 2px solid @dark;
+}
+.content {
+    width: 70%;
+    height: 90%;
+    .flex(flex,flex-start,flex-start,column);
+    h1 {
+        font-size: 1.2rem;
+    }
+    h2 {
+        font-size: 1.7rem;
+    }
+    img {
+        border-radius: 10px;
+        width: 100%;
+        height: 15rem;
+        margin-bottom: 1rem;
+        border: 1.5px solid @dark;
+    }
+    .button();
+}
+@media only screen and (max-width: 900px) {
+    .animal-details {
+        width: 20rem;
+    }
+}
+@media only screen and (max-width: 650px) {
+    .animal-details {
+        height: 28rem;
+        width:17rem;
+    }
+    .content h2 {
+        font-size: 1.2rem;
+    }
+    .content img {
+        width: 12rem;
+        height: 10rem;
+    }
+    .content h1 {
+        font-size: 0.8rem;
+    }
+}

@@ -1,0 +1,39 @@
+@import "nav-bar.less";
+@import "animals.less";
+@import "animal-details.less";
+@import "home.less";
+@import "contact.less";
+@import "adoption.less";
+@import "global.less";
+
+body {
+    font-family: "Lato", sans-serif;
+    color: white;
+    margin: 0;
+}
+.app {
+    .flex(flex,flex-start,center,column);
+    height: calc(100vh - 3rem);
+    width: 99vw;
+    background: url("imgs/background.jpg");
+    background-size: 100% 100%;
+}
+a {
+    color: white;
+    text-decoration: none;
+}
+.loading {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    position: absolute;
+    .flex();
+    z-index: 6;
+    .gradient();
+    img {
+        height: 3rem;
+        width: 3rem;
+    }
+}
+

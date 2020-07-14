@@ -1,0 +1,75 @@
+@import "global.less";
+
+.animals {
+    margin-top: 2rem;
+    width: auto;
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+.animal {
+    margin: 1rem 1rem;
+    width: 23rem;
+    height: 20rem;
+    .flex(flex,center,center,column);
+    .gradient();
+    border-radius: 10px;
+    border: 2px solid @dark;
+    h1 {
+        font-size: 1.5rem;
+    }
+    h2 {
+        margin-top: 0;
+        font-size: 2rem;
+        &:hover {
+            text-shadow: 2px 2px 2px rgba(150, 150, 150, 1);
+            cursor: pointer;
+        }
+    }
+    img {
+        border-radius: 10px;
+        width: 15rem;
+        height: 12rem;
+        margin-bottom: 1rem;
+        border: 1.5px solid @dark;
+    }
+}
+@media only screen and (max-width: 1400px) {
+    .animal {
+        width: 15rem;
+        height: 16rem;
+    }
+    .animal h2 {
+        font-size: 1.5rem;
+    }
+    .animal img {
+        width: 10rem;
+        height: 8.5rem;
+    }
+}
+@media only screen and (max-width: 950px) {
+    .animal {
+        width: 10rem;
+        height: 12rem;
+        margin: 1rem 0.5rem;
+        h2 {
+            font-size: 1.2rem;
+        }
+        img {
+            width: 6rem;
+            height: 5rem;
+        }
+    }
+}
+@media only screen and (max-width: 700px) {
+    .animals {
+        grid-template-columns: auto auto;
+    }
+}
+@media only screen and (max-width: 450px) {
+    .animals {
+        grid-template-columns: auto auto;
+    }
+    .animal {
+        width: 8rem;
+    }
+}

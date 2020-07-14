@@ -1,0 +1,50 @@
+@import "global.less";
+
+.contact {
+    margin-top: 3rem;
+    width: 27rem;
+    height: 20rem;
+    .flex();
+    flex-direction: column;
+    .gradient();
+    border-radius: 10px;
+    border: 2px solid @dark;
+}
+.contact-details {
+    width: 70%;
+    height: 75%;
+    .flex(flex,flex-start,flex-start,column);
+    h1 {
+        font-size: 1rem;
+    }
+}
+.info {
+    margin-top: 3rem;
+    width: 27rem;
+    height: 16rem;
+    .flex();
+    flex-direction: column;
+    background-image: linear-gradient(315deg, @dark-green -10%, @dark 94%);
+    border-radius: 10px;
+    border: 2px solid @dark;
+}
+.info-details {
+    width: 80%;
+    height: 75%;
+    .flex(flex,flex-start,flex-start,column);
+    h1 {
+        font-size: 1.2rem;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+}
+@media only screen and (max-width: 650px) {
+    .contact{
+        width: 15rem;
+        height: 18rem;
+        h1{
+            font-size: 0.8rem;
+        }
+    }
+}
