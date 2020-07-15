@@ -427,7 +427,7 @@
 .adoption-form {
   margin-top: 3rem;
   width: 30rem;
-  height: 50rem;
+  height: 32rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -437,7 +437,8 @@
   border-radius: 10px;
   border: 2px solid #3e4444;
 }
-.adoption-content {
+.adoption-content1,
+.adoption-content2 {
   width: 75%;
   height: 95%;
   display: flex;
@@ -445,20 +446,24 @@
   align-items: flex-start;
   flex-direction: column;
 }
-.adoption-content h1 {
+.adoption-content1 h1,
+.adoption-content2 h1 {
   font-size: 1.2rem;
 }
-.adoption-content h2 {
+.adoption-content1 h2,
+.adoption-content2 h2 {
   font-size: 1.7rem;
 }
-.adoption-content img {
+.adoption-content1 img,
+.adoption-content2 img {
   border-radius: 10px;
   width: 100%;
   height: 15rem;
   margin-bottom: 1rem;
   border: 1.5px solid #3e4444;
 }
-.adoption-content button {
+.adoption-content1 button,
+.adoption-content2 button {
   margin-top: 1rem;
   padding: 0.2rem 0.5rem;
   font-size: 1.2rem;
@@ -467,16 +472,19 @@
   border: 2px solid #3e4444;
   color: white;
 }
-.adoption-content button:hover {
+.adoption-content1 button:hover,
+.adoption-content2 button:hover {
   background-color: #405d27;
   cursor: pointer;
 }
-.adoption-content p {
+.adoption-content1 p,
+.adoption-content2 p {
   margin: 0 0;
   font-size: 1rem;
   color: #c43232;
 }
-.adoption-content input {
+.adoption-content1 input,
+.adoption-content2 input {
   margin: 1rem 0;
   padding-left: 0.5rem;
   width: 15rem;
@@ -496,16 +504,20 @@
   .adoption-form {
     width: 20rem;
   }
-  .adoption-content {
+  .adoption-content1,
+  .adoption-content2 {
     width: 80%;
   }
-  .adoption-content h2 {
+  .adoption-content1 h2,
+  .adoption-content2 h2 {
     font-size: 1.3rem;
   }
-  .adoption-content p {
+  .adoption-content1 p,
+  .adoption-content2 p {
     font-size: 0.8rem;
   }
-  .adoption-content input {
+  .adoption-content1 input,
+  .adoption-content2 input {
     height: 1.4rem;
     font-size: 1rem;
   }
@@ -514,16 +526,20 @@
   .adoption-form {
     width: 16rem;
   }
-  .adoption-content {
+  .adoption-content1,
+  .adoption-content2 {
     width: 80%;
   }
-  .adoption-content h2 {
+  .adoption-content1 h2,
+  .adoption-content2 h2 {
     font-size: 1.3rem;
   }
-  .adoption-content p {
+  .adoption-content1 p,
+  .adoption-content2 p {
     font-size: 0.8rem;
   }
-  .adoption-content input {
+  .adoption-content1 input,
+  .adoption-content2 input {
     width: 12rem;
     height: 1.2rem;
     font-size: 0.8rem;
