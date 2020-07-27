@@ -45,7 +45,6 @@
     }
     this.get('#/', function (context) {
       urlNavigation(context);
-      addLoading();
       if (homeRender) {
         $(".app").append("<ul class='rslides'></ul>");
         let imgs = ['dog1.jpg', 'dog2.jpg', 'dog3.jpg'];
@@ -61,7 +60,6 @@
     });
     this.get('#/contact', function (context) {
       urlNavigation(context);
-      addLoading();
       let contactInfo = ['80-288 Gdańsk RandomName 5 Street', 'Phone: 123 456 789', 'Email: randomemail@gmail.com', 'Adoption from Monday to Friday', 'Working hours: 8:00-16:00']
       $(".app").append("<div class='contact'></div>");
       $(".app .contact").append("<div class='contact-details'></div>");
