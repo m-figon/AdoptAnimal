@@ -542,6 +542,7 @@ body {
   font-family: "Lato", sans-serif;
   color: white;
   margin: 0;
+  overflow: hidden;
 }
 .app {
   display: flex;
@@ -549,7 +550,7 @@ body {
   align-items: center;
   flex-direction: column;
   height: calc(100vh - 3rem);
-  width: 99vw;
+  width: 100vw;
   background: url("imgs/background.jpg");
   background-size: 100% 100%;
 }

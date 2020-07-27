@@ -3,48 +3,35 @@
 
   var app = $.sammy(function () {
     let homeRender = true;
+    let animalsRender = true;
     function urlNavigation(context) {
       $('.left h1').on('click', () => {
-        $('.loading').remove();
-        $('.adoption-form').remove();
-        homeRender = true;
-        $('.contact').remove();
-        $('.info').remove();
-        $('.animals').remove();
-        $('.animal-details').remove();
         context.app.setLocation('#/');
       })
       let urls = ['dogs', 'cats', 'rabbits'];
       for (let i = 0; i < urls.length; i++) {
         $(".middle h1:eq(" + i + ")").on('click', () => {
-          $('.loading').remove();
-          $('.rslides').remove();
-          $('.quote').remove();
-          $('.adoption-form').remove();
-          $('.contact').remove();
-          $('.info').remove();
-          $('.animals').remove();
-          $('.animal-details').remove();
           context.app.setLocation("#/" + urls[i]);
         })
       }
       $('.right h1').on('click', () => {
-        $('.loading').remove();
-        $('.rslides').remove();
-        $('.adoption-form').remove();
-        $('.quote').remove();
-        $('.info').remove();
-        $('.animals').remove();
-        $('.animal-details').remove();
         context.app.setLocation('#/contact');
       })
     }
-    function addLoading(){
+    function addLoading() {
       $(".app").prepend('<div class="loading"></div>');
       $(".loading").prepend('<img src="imgs/load.gif">');
     }
     this.get('#/', function (context) {
       urlNavigation(context);
+      $('.loading').remove();
+      $('.adoption-form').remove();
+      homeRender = true;
+      $('.contact').remove();
+      $('.info').remove();
+      $('.animals').remove();
+      $('.animal-details').remove();
+      addLoading();
       if (homeRender) {
         $(".app").append("<ul class='rslides'></ul>");
         let imgs = ['dog1.jpg', 'dog2.jpg', 'dog3.jpg'];
@@ -54,24 +41,36 @@
         $(".app").append("<div class='quote'><h1>Saving one dog will not change the world, but surely for that one dog, the world will change forever.</h1></div>");
         homeRender = false;
       }
-      window.onload = function () {
-        $(".loading").remove();
-        };
+      $(".loading").remove();
     });
     this.get('#/contact', function (context) {
       urlNavigation(context);
+      $('.loading').remove();
+      $('.rslides').remove();
+      $('.adoption-form').remove();
+      $('.quote').remove();
+      $('.info').remove();
+      $('.animals').remove();
+      $('.animal-details').remove();
+      addLoading();
       let contactInfo = ['80-288 Gdańsk RandomName 5 Street', 'Phone: 123 456 789', 'Email: randomemail@gmail.com', 'Adoption from Monday to Friday', 'Working hours: 8:00-16:00']
       $(".app").append("<div class='contact'></div>");
       $(".app .contact").append("<div class='contact-details'></div>");
       for (let item of contactInfo) {
         $(".contact-details").append("<h1>" + item + "</h1>");
       }
-      window.onload = function () {
-        $(".loading").remove();
-        };
+      $(".loading").remove();
     });
     this.get('#/:type', function (context) {
       urlNavigation(context);
+      $('.loading').remove();
+      $('.rslides').remove();
+      $('.quote').remove();
+      $('.adoption-form').remove();
+      $('.contact').remove();
+      $('.info').remove();
+      $('.animal-details').remove();
+      $('.animals').remove();
       addLoading();
       console.log(context.params.type);
       let animals = [];
