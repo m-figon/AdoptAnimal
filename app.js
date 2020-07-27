@@ -24,12 +24,10 @@
     }
     this.get('#/', function (context) {
       urlNavigation(context);
-      $('.loading').remove();
-      $('.adoption-form').remove();
-      $('.contact').remove();
-      $('.info').remove();
-      $('.animals').remove();
-      $('.animal-details').remove();
+      let str = ['.loading','.adoption-form','.contact','.info','.animals','.animal-details'];
+      for(let item of str){
+        $(item).remove();
+      }
       addLoading();
       if (homeRender) {
         $(".app").append("<ul class='rslides'></ul>");
@@ -45,13 +43,10 @@
     });
     this.get('#/contact', function (context) {
       urlNavigation(context);
-      $('.loading').remove();
-      $('.rslides').remove();
-      $('.adoption-form').remove();
-      $('.quote').remove();
-      $('.info').remove();
-      $('.animals').remove();
-      $('.animal-details').remove();
+      let str = ['.loading','.rslides','.adoption-form','.quote','.info','.animals','.animal-details'];
+      for(let item of str){
+        $(item).remove();
+      }
       addLoading();
       let contactInfo = ['80-288 Gdańsk RandomName 5 Street', 'Phone: 123 456 789', 'Email: randomemail@gmail.com', 'Adoption from Monday to Friday', 'Working hours: 8:00-16:00']
       $(".app").append("<div class='contact'></div>");
@@ -63,14 +58,10 @@
     });
     this.get('#/:type', function (context) {
       urlNavigation(context);
-      $('.loading').remove();
-      $('.rslides').remove();
-      $('.quote').remove();
-      $('.adoption-form').remove();
-      $('.contact').remove();
-      $('.info').remove();
-      $('.animal-details').remove();
-      $('.animals').remove();
+      let str = ['.loading','.rslides','.adoption-form','.contact','.quote','.info','.animals','.animal-details'];
+      for(let item of str){
+        $(item).remove();
+      }
       addLoading();
       console.log(context.params.type);
       let animals = [];
@@ -99,13 +90,10 @@
     });
     this.get('#/:type/:id', function (context) {
       urlNavigation(context);
-      $('.loading').remove();
-      $('.rslides').remove();
-      $('.quote').remove();
-      $('.adoption-form').remove();
-      $('.contact').remove();
-      $('.info').remove();
-      $('.animals').remove();
+      let str = ['.loading','.rslides','.adoption-form','.contact','.quote','.info','.animals'];
+      for(let item of str){
+        $(item).remove();
+      }
       console.log(context.params.type);
       addLoading();
       let animals = [];
