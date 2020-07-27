@@ -5,6 +5,7 @@
     let homeRender = true;
     function urlNavigation(context) {
       $('.left h1').on('click', () => {
+        homeRender = true;
         context.app.setLocation('#/');
       })
       let urls = ['dogs', 'cats', 'rabbits'];
@@ -25,7 +26,6 @@
       urlNavigation(context);
       $('.loading').remove();
       $('.adoption-form').remove();
-      homeRender = true;
       $('.contact').remove();
       $('.info').remove();
       $('.animals').remove();
@@ -39,6 +39,7 @@
         }
         $(".app").append("<div class='quote'><h1>Saving one dog will not change the world, but surely for that one dog, the world will change forever.</h1></div>");
         homeRender = false;
+        $(".rslides").responsiveSlides();
       }
       $(".loading").remove();
     });
