@@ -2,9 +2,11 @@
 (function ($) {
 
   var app = $.sammy(function () {
+    let homeRender = true;
     function urlNavigation(context) {
       $('.left h1').on('click', () => {
         $('.adoption-form').remove();
+        homeRender=true;
         $('.contact').remove();
         $('.info').remove();
         $('.animals').remove();
@@ -39,13 +41,15 @@
         $(".loading").remove();
       };
       urlNavigation(context);
-      $(".app").append("<ul class='rslides'></ul>");
-      console.log('adding slides');
-      let imgs = ['dog1.jpg', 'dog2.jpg', 'dog3.jpg'];
-      for (let item of imgs) {
-        $(".app ul").append("<li><img src='imgs/" + item + "' alt=''></li>");
+      if (homeRender) {
+        $(".app").append("<ul class='rslides'></ul>");
+        let imgs = ['dog1.jpg', 'dog2.jpg', 'dog3.jpg'];
+        for (let item of imgs) {
+          $(".app ul").append("<li><img src='imgs/" + item + "' alt=''></li>");
+        }
+        $(".app").append("<div class='quote'><h1>Saving one dog will not change the world, but surely for that one dog, the world will change forever.</h1></div>");
+        homeRender = false;
       }
-      $(".app").append("<div class='quote'><h1>Saving one dog will not change the world, but surely for that one dog, the world will change forever.</h1></div>");
     });
     this.get('#/contact', function (context) {
       let contactInfo = ['80-288 Gdańsk RandomName 5 Street', 'Phone: 123 456 789', 'Email: randomemail@gmail.com', 'Adoption from Monday to Friday', 'Working hours: 8:00-16:00']
