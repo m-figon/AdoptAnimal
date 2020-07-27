@@ -54,11 +54,10 @@
         }
         $(".app").append("<div class='quote'><h1>Saving one dog will not change the world, but surely for that one dog, the world will change forever.</h1></div>");
         homeRender = false;
-        window.onload = function () {
+      }
+      window.onload = function () {
         $(".loading").remove();
         };
-      }
-
     });
     this.get('#/contact', function (context) {
       urlNavigation(context);
