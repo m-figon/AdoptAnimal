@@ -419,8 +419,8 @@
 }
 .adoption-form {
   margin-top: 3rem;
-  width: 30rem;
-  height: 30.5rem;
+  width: 20rem;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;

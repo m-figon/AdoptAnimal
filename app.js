@@ -1,28 +1,46 @@
 
 (function ($) {
 
-  var app = $.sammy('#main', function () {
+  var app = $.sammy(function () {
     function urlNavigation(context) {
       $('.left h1').on('click', () => {
+        $('.adoption-form').remove();
+        $('.contact').remove();
+        $('.info').remove();
+        $('.animals').remove();
+        $('.animal-details').remove();
         context.app.setLocation('#/');
-        location.reload();
       })
       let urls = ['dogs', 'cats', 'rabbits'];
       for (let i = 0; i < urls.length; i++) {
         $(".middle h1:eq(" + i + ")").on('click', () => {
+          $('.rslides').remove();
+          $('.quote').remove();
+          $('.adoption-form').remove();
+          $('.contact').remove();
+          $('.info').remove();
+          $('.animals').remove();
+          $('.animal-details').remove();
           context.app.setLocation("#/" + urls[i]);
-          location.reload();
         })
       }
       $('.right h1').on('click', () => {
+        $('.rslides').remove();
+        $('.adoption-form').remove();
+        $('.quote').remove();
+        $('.info').remove();
+        $('.animals').remove();
+        $('.animal-details').remove();
         context.app.setLocation('#/contact');
-        location.reload();
       })
     }
     this.get('#/', function (context) {
-      $(".loading").remove();
+      window.onload = function () {
+        $(".loading").remove();
+      };
       urlNavigation(context);
       $(".app").append("<ul class='rslides'></ul>");
+      console.log('adding slides');
       let imgs = ['dog1.jpg', 'dog2.jpg', 'dog3.jpg'];
       for (let item of imgs) {
         $(".app ul").append("<li><img src='imgs/" + item + "' alt=''></li>");
@@ -31,7 +49,9 @@
     });
     this.get('#/contact', function (context) {
       let contactInfo = ['80-288 Gdańsk RandomName 5 Street', 'Phone: 123 456 789', 'Email: randomemail@gmail.com', 'Adoption from Monday to Friday', 'Working hours: 8:00-16:00']
-      $(".loading").remove();
+      window.onload = function () {
+        $(".loading").remove();
+      };
       urlNavigation(context);
       $(".app").append("<div class='contact'></div>");
       $(".app .contact").append("<div class='contact-details'></div>");
@@ -48,7 +68,9 @@
         .then(data => {
           animals = data.slice();
           console.log(animals);
-          $(".loading").remove();
+          window.onload = function () {
+            $(".loading").remove();
+          };
           $(".app").append("<div class='animals'></div>");
           let id = 0;
           for (let item of animals) {
@@ -58,8 +80,8 @@
               $(".app .animal:eq(" + id + ")").append("<h2>" + item.name + " " + item.age + "</h2>");
               $(".app .animal:eq(" + id + ")").append("<img src=" + item.img + ">");
               $('.animal h2:eq(' + id + ')').on('click', () => {
+                $('.animals').remove();
                 context.app.setLocation("#/" + item.type + "/" + item.id);
-                location.reload();
               })
               id++;
             }
@@ -75,7 +97,9 @@
         .then(data => {
           animals = data.slice();
           console.log(animals);
-          $(".loading").remove();
+          window.onload = function () {
+            $(".loading").remove();
+          };
           $(".app").append("<div class='animal-details'></div>");
           console.log(context.params.id);
           for (let item of animals) {
@@ -86,8 +110,8 @@
                 $(".content").append(item);
               }
               $('.content button').on('click', () => {
+                $('.animal-details').remove();
                 context.app.setLocation("#/" + item.type + "/" + item.id + "/adoption");
-                location.reload();
               })
               id++;
             }
@@ -99,7 +123,7 @@
       let inputValues1 = ["First Name", "Last Name", "City", "Street"];
       let errors1 = ["First name must containt from 3 to 12 a-z letters", "Last Name must containt from 3 to 12 a-z letters", "City name must be 3 or more letters long", "Street name must be 3 or more letters long"];
       let inputValues2 = ["Phone Number", "Email"];
-      let errors2= ["Phone Number must contain 9 digits without space", "Please enter correct email address"];
+      let errors2 = ["Phone Number must contain 9 digits without space", "Please enter correct email address"];
       fetch('https://rocky-citadel-32862.herokuapp.com/AdoptAnimal/animals')
         .then(response => response.json())
         .then(data => {
@@ -224,7 +248,7 @@
               })
             }
           })
-          
+
         });
     });
   });
