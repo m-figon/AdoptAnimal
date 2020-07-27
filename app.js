@@ -3,7 +3,6 @@
 
   var app = $.sammy(function () {
     let homeRender = true;
-    let animalsRender = true;
     function urlNavigation(context) {
       $('.left h1').on('click', () => {
         context.app.setLocation('#/');
@@ -99,6 +98,13 @@
     });
     this.get('#/:type/:id', function (context) {
       urlNavigation(context);
+      $('.loading').remove();
+      $('.rslides').remove();
+      $('.quote').remove();
+      $('.adoption-form').remove();
+      $('.contact').remove();
+      $('.info').remove();
+      $('.animals').remove();
       console.log(context.params.type);
       addLoading();
       let animals = [];
@@ -107,9 +113,7 @@
         .then(data => {
           animals = data.slice();
           console.log(animals);
-          window.onload = function () {
-            $(".loading").remove();
-          };
+          $(".loading").remove();
           $(".app").append("<div class='animal-details'></div>");
           console.log(context.params.id);
           for (let item of animals) {
