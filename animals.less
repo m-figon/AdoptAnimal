@@ -19,6 +19,7 @@
     h2 {
         margin-top: 0;
         font-size: 2rem;
+        transition: text-shadow 500ms;
         &:hover {
             text-shadow: 2px 2px 2px rgba(150, 150, 150, 1);
             cursor: pointer;
@@ -30,6 +31,20 @@
         height: 12rem;
         margin-bottom: 1rem;
         border: 1.5px solid @dark;
+            -webkit-animation-name: fadeIn;
+            animation-name: fadeIn;
+            -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+            @-webkit-keyframes fadeIn {
+            0% {opacity: 0;}
+            100% {opacity: 1;}
+            }
+            @keyframes fadeIn {
+            0% {opacity: 0;}
+            100% {opacity: 1;}
+            } 
     }
 }
 @media only screen and (max-width: 1400px) {

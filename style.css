@@ -7,6 +7,7 @@
   position: relative;
   border-bottom: 1.5px solid #3e4444;
   z-index: 5;
+  transition: text-shadow 500ms;
 }
 .nav-bar h1:hover {
   text-shadow: 2px 2px 2px #969696;
@@ -21,6 +22,7 @@
 }
 .left h1 {
   font-size: 2rem;
+  transition: text-shadow 500ms;
 }
 .left img {
   height: 2rem;
@@ -39,6 +41,7 @@
 .middle h1 {
   margin: 0 1rem;
   font-size: 1.5rem;
+  transition: text-shadow 500ms;
 }
 .right {
   width: 10%;
@@ -46,6 +49,9 @@
   justify-content: center;
   align-items: center;
   flex-direction: row;
+}
+.right h1 {
+  transition: text-shadow 500ms;
 }
 @media only screen and (max-width: 1300px) {
   .left {
@@ -135,6 +141,7 @@
 .animal h2 {
   margin-top: 0;
   font-size: 2rem;
+  transition: text-shadow 500ms;
 }
 .animal h2:hover {
   text-shadow: 2px 2px 2px #969696;
@@ -146,6 +153,28 @@
   height: 12rem;
   margin-bottom: 1rem;
   border: 1.5px solid #3e4444;
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 @media only screen and (max-width: 1400px) {
   .animal {
@@ -213,6 +242,28 @@
   width: 17rem;
   margin-bottom: 1rem;
   border: 1.5px solid #3e4444;
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 .content button {
   margin-top: 1rem;
@@ -222,6 +273,7 @@
   background-color: #82b74b;
   border: 2px solid #3e4444;
   color: white;
+  transition: background-color 500ms;
 }
 .content button:hover {
   background-color: #405d27;
@@ -280,10 +332,32 @@
   position: relative;
   list-style: none;
   overflow: hidden;
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
   width: 100vw;
   height: 100%;
   padding: 0;
   margin: 0;
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 .rslides img {
   display: block;
@@ -359,6 +433,40 @@
   background-image: linear-gradient(315deg, #405d27 -10%, #3e4444 94%);
   border-radius: 10px;
   border: 2px solid #3e4444;
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+@keyframes pulse {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
 }
 .contact-details {
   width: 70%;
@@ -426,9 +534,43 @@
   align-items: center;
   flex-direction: row;
   flex-direction: column;
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
   background-image: linear-gradient(315deg, #405d27 -10%, #3e4444 94%);
   border-radius: 10px;
   border: 2px solid #3e4444;
+}
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+@keyframes pulse {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
 }
 .adoption-content1,
 .adoption-content2 {
@@ -464,6 +606,7 @@
   background-color: #82b74b;
   border: 2px solid #3e4444;
   color: white;
+  transition: background-color 500ms;
 }
 .adoption-content1 button:hover,
 .adoption-content2 button:hover {

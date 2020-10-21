@@ -9,6 +9,7 @@
     position: relative;
     border-bottom: 1.5px solid @dark;
     z-index: 5;
+    transition: text-shadow 500ms;
     h1{
         &:hover {
             text-shadow: 2px 2px 2px rgba(150, 150, 150, 1);
@@ -21,6 +22,7 @@
     .flex();
     h1 {
         font-size: 2rem;
+        transition: text-shadow 500ms;
     }
     img {
         height: 2rem;
@@ -36,11 +38,15 @@
     h1 {
         margin: 0 1rem;
         font-size: 1.5rem;
+        transition: text-shadow 500ms;
     }
 }
 .right {
     width: 10%;
     .flex();
+    h1{
+        transition: text-shadow 500ms;
+    }
 }
 @media only screen and (max-width: 1300px) {
     .left {
